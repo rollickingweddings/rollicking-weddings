@@ -1,25 +1,183 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
-import Image from "next/image";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rollicking Weddings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            text-align: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .blog-posts {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .post {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .post h3 {
+            color: #333;
+        }
+        .post p {
+            color: #555;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-pink-100 via-yellow-100 to-pink-200 p-6">
-      <header className="flex flex-col items-center text-center mb-10">
-        <Image
-          src="/rollickingweddings-header.jpg"
-          alt="Rollicking Weddings Logo"
-          width={400}
-          height={200}
-          className="mb-4"
-        />
-        <h1 className="text-4xl font-bold text-pink-700 drop-shadow-sm">
-          Weddings that glitter, growl, and go against the grain.
-        </h1>
-      </header>
-      ...
-    </main>
-  );
-}
+<header>
+    <h1>Rollicking Weddings</h1>
+    <p>Where unique weddings get the love they deserve!</p>
+</header>
+
+<nav>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#inspiration">Inspiration</a>
+    <a href="#submit">Submit Your Wedding</a>
+    <a href="#vendors">Recommended Vendors</a>
+    <a href="#freebies">Freebies</a>
+</nav>
+
+<section id="manifesto">
+    <h2>Our Manifesto</h2>
+    <p>We believe in weddings that speak to your soul. Whether it's a big, bold bash or an intimate gathering, it's your day to shine. No rules, just love, creativity, and the occasional glitter bomb!</p>
+</section>
+
+<section id="inspiration">
+    <h2>Inspiration</h2>
+    <div class="blog-posts">
+        <div class="post">
+            <h3>Wedding Post 1</h3>
+            <p>A sneak peek into a wedding that embraced all the colors of the rainbow.</p>
+        </div>
+        <div class="post">
+            <h3>Wedding Post 2</h3>
+            <p>Exploring the beauty of alternative venues and making them your own.</p>
+        </div>
+        <div class="post">
+            <h3>Wedding Post 3</h3>
+            <p>How to incorporate quirky details that tell your love story.</p>
+        </div>
+    </div>
+</section>
+
+<section id="submit">
+    <h2>Submit Your Wedding</h2>
+    <p>Got a wedding that defies tradition? Send us your details, and we might feature it!</p>
+    <div class="form-container">
+        <form action="mailto:rollickingweddings@gmail.com" method="POST" enctype="multipart/form-data">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="partner">Partner's Name:</label>
+            <input type="text" id="partner" name="partner" required>
+
+            <label for="date">Wedding Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="story">Tell us your story:</label>
+            <textarea id="story" name="story" rows="4" required></textarea>
+
+            <label for="file">Upload Photos:</label>
+            <input type="file" id="file" name="file" multiple>
+
+            <button type="submit">Submit Your Wedding</button>
+        </form>
+    </div>
+</section>
+
+<section id="vendors">
+    <h2>Recommended Vendors</h2>
+    <p>Coming soon! We’re curating a list of the best wedding vendors from around the world.</p>
+</section>
+
+<section id="freebies">
+    <h2>Freebies</h2>
+    <p>Download our fabulous freebies to help make your wedding sparkle!</p>
+    <div class="blog-posts">
+        <div class="post">
+            <h3>Alternative Checklist</h3>
+            <button>Download</button>
+        </div>
+        <div class="post">
+            <h3>Printable Vows</h3>
+            <button>Download</button>
+        </div>
+        <div class="post">
+            <h3>DIY Zine</h3>
+            <button>Download</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Rollicking Weddings | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
